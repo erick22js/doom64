@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="title">Sector Flags</title>
+	<script src="../scripts.js" type="text/JavaScript"></script>
+	<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+	<div id="navigation"></div>
+	
+	<div id="content">
+		<h1>Vertexes</h1>
+		
+		<p>The vertexes are the basic structure element of all the Doom 64 maps, setting up all the linedefs conections and polygon shape of subsectors.</p>
+		
+		<h1>Structure</h1>
+		
+		<p>The vertexes position are stored as fixed_t (where from 32-bit value, the high 16-bit represents the integer part and the least 16-bit the decimal part) as a difference from original titles.</p>
+		
+		<table>
+			<tr>
+				<th>Offset (bytes)</th>
+				<th>Size (bytes)</th>
+				<th>C type</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>4</td>
+				<td>int32_t</td>
+				<td>X position</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>4</td>
+				<td>int32_t</td>
+				<td>Y position</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="footer"></div>
+	<script>
+	layout("../");
+	</script>
+</body>
+</html>
