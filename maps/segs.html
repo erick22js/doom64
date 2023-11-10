@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="title">Segs</title>
+	<script src="../scripts.js" type="text/JavaScript"></script>
+	<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+	<div id="navigation"></div>
+	
+	<div id="content">
+		<h1>Segs</h1>
+		
+		<p>Segs is a abbreviation for segments and represents the structure part of a subsector. The segments are a result of a BSP generation by multiples splits in the map (did by a map editor), each segment is owned by a single subsector, linedef and sidedef.</p>
+		
+		<h1>Structure</h1>
+		
+		<p>The direction field can have two values: 0 if the segment runs along the front side (or "right") of the linedef or 1 if the segment runs along the back side (or "left") of the linedef.</p>
+		
+		<table>
+			<tr>
+				<th>Offset (bytes)</th>
+				<th>Size (bytes)</th>
+				<th>C type</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>First vertex index</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Second vertex index</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Angle, of full circle -32768 to 32767</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Linedef index</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Direction, 0 is same as the line and 1 the opposite</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Offset in the linedef (distance between first vertex of seg and linedef)</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="footer"></div>
+	<script>
+	layout("../");
+	</script>
+</body>
+</html>
