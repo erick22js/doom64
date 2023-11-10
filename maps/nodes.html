@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="title">Nodes</title>
+	<script src="../scripts.js" type="text/JavaScript"></script>
+	<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+	<div id="navigation"></div>
+	
+	<div id="content">
+		<h1>Nodes</h1>
+		
+		<p>The maps in Doom are generated in process of BSP split, the Nodes structure are one of the results of this process and are used to speed up the map renderization. For each split, the map subdivides the current node in two children, where can be other node entry or a subsector of the map.</p>
+		
+		<h1>Structure</h1>
+		
+		<p>The partition line is used to determine on wich side the player is in, and the bounding box to reduce the ammount of calculations for renderization.</p>
+		<p>To determine what the children are, if the bit 15 of index value is 0: the child is a subnode, if is 1: the child is a subsector. The 0..14 bits gives the index of element.</p>
+		<p>The root node of map is the last of list.</p>
+		
+		<table>
+			<tr>
+				<th>Offset (bytes)</th>
+				<th>Size (bytes)</th>
+				<th>C type</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>X coordinate of partition line</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Y coordinate of partition line</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>X change from start to end on partition line</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Y change from start to end on partition line</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>8</td>
+				<td>int16_t[4]</td>
+				<td>Right bounding box</td>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td>8</td>
+				<td>int16_t[4]</td>
+				<td>Left bounding box</td>
+			</tr>
+			<tr>
+				<td>24</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Right child</td>
+			</tr>
+			<tr>
+				<td>26</td>
+				<td>2</td>
+				<td>int16_t</td>
+				<td>Left child</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="footer"></div>
+	<script>
+	layout("../");
+	</script>
+</body>
+</html>
