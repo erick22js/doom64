@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="title">Lights</title>
+	<script src="../scripts.js" type="text/JavaScript"></script>
+	<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+	<div id="navigation"></div>
+	
+	<div id="content">
+		<h1>Lights</h1>
+		
+		<p>The lights lumps is a new level lump in Doom 64, and contains a list of RGB colors definition for lighting in map referred by sectors.</p>
+		
+		<h1>Structure</h1>
+		
+		<p>By default, the lookup starts at 256, because Doom 64 generates a table of 256 grayscale colors palette (from 0 to 255 values), followed by the actual RGB table.</p>
+		
+		<table>
+			<tr>
+				<th>Offset (bytes)</th>
+				<th>Size (bytes)</th>
+				<th>C type</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>1</td>
+				<td>uint8_t</td>
+				<td>Red value</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+				<td>uint8_t</td>
+				<td>Green value</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>1</td>
+				<td>uint8_t</td>
+				<td>Blue value</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>1</td>
+				<td>uint8_t</td>
+				<td>Padding (unused)</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>2</td>
+				<td>uint16_t</td>
+				<td>Tag</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div id="footer"></div>
+	<script>
+	layout("../");
+	</script>
+</body>
+</html>
