@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="title">Rejects</title>
+	<script src="../scripts.js" type="text/JavaScript"></script>
+	<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+	<div id="navigation"></div>
+	
+	<div id="content">
+		<h1>Rejects</h1>
+		
+		<p>To speed up the sight calculations of all things in Doom 64, the engine makes use of a table with pre-calculated values called Reject, its purpose is to avoid the game be always calculating if the player is on his sight of view by checking if the sectors are visible to each other, to do this, Rejects table store a wide table of flags where the vertical axis represents the sector the monster are in, and the horizontal where the player are in, if the value in this cell is 0, the monster never can see the player, otherwise is 1, the game calculates the if player is on his sight.</p>
+		
+		<h1>Structure</h1>
+		
+		<p>The values of table are stored as a packed array of bits where the least significant bit represents the mostly near next value. For example, given the structure:</p>
+		
+		<table>
+			<tr>
+				<th></th>
+				<th>0</th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+			</tr>
+			<tr>
+				<td><b>0</b></td>
+				<td>1</td>
+				<td>0</td>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td><b>1</b></td>
+				<td>0</td>
+				<td>1</td>
+				<td>1</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td><b>2</b></td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td><b>3</b></td>
+				<td>0</td>
+				<td>0</td>
+				<td>1</td>
+				<td>1</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td><b>4</b></td>
+				<td>0</td>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+		</table>
+		
+		<p>The map is composed by 5 sectors, and the packed bits in binary representation for this table would be: 11000101 00111110 00100110 00000001; Or in hexadecimal: 0xC5 0x3E 0x26 0x01.</p>
+		
+	</div>
+
+	<div id="footer"></div>
+	<script>
+	layout("../");
+	</script>
+</body>
+</html>
